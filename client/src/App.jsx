@@ -1,5 +1,13 @@
+import { Outlet } from "react-router-dom";
+import { Header } from "./components/index.js";
+
 function App() {
-  return <h1 className="text-red-600"></h1>;
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
