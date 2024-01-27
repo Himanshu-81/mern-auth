@@ -14,8 +14,8 @@ export default function Header() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600"
-                  : "text-green-950 underline underline-offset-4 px-2 rounded-md"
+                  ? "no-underline text-green-950"
+                  : "text-green-950 underline underline-offset-4"
               }
             >
               Home
@@ -26,8 +26,8 @@ export default function Header() {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600"
-                  : "text-green-950 underline underline-offset-4 px-2 rounded-md"
+                  ? "no-underline text-green-950"
+                  : "text-green-950 underline underline-offset-4"
               }
             >
               About
@@ -35,11 +35,11 @@ export default function Header() {
           </li>
           <li>
             <NavLink
-              to="/signin"
+              to="/sign-in"
               className={({ isActive }) =>
                 isActive
-                  ? "text-green-600"
-                  : "text-green-950 underline underline-offset-4 px-2 rounded-md"
+                  ? "no-underline text-green-950"
+                  : "text-green-950 underline underline-offset-4"
               }
             >
               Sign In
