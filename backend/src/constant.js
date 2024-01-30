@@ -1,1 +1,1 @@
-export const PORT = 5555;
+export const PROJECT_NAME = "Auth-App";
