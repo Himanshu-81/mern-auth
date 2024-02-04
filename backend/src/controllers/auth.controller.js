@@ -55,21 +55,21 @@ const signup = asyncHandler(async (req, res) => {
 });
 
 const signin = asyncHandler(async (req, res) => {
-  const { username, email, password } = req.body;
+  const incomingUser = req.body;
 
-  if (!username && !email) {
+  if (!incomingUser.username && !incomingUser.email) {
     throw new ApiError(400, "Username or email is required");
   }
 
   const user = await User.findOne({
-    $or: [{ email }, { username }],
+    $or: [{ email: incomingUser?.email }, { username: incomingUser?.username }],
   });
 
   if (!user) {
     throw new ApiError(404, "User not found");
   }
 
-  const isPasswordValid = await user.isPasswordCorrect(password);
+  const isPasswordValid = await user.isPasswordCorrect(incomingUser.password);
 
   if (!isPasswordValid) {
     throw new ApiError(401, "Invalid login credentials");

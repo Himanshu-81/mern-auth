@@ -14,7 +14,7 @@ export default function Header() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "no-underline text-green-950"
+                  ? "no-underline text-green-700"
                   : "text-green-950 underline underline-offset-4"
               }
             >
@@ -26,7 +26,7 @@ export default function Header() {
               to="/about"
               className={({ isActive }) =>
                 isActive
-                  ? "no-underline text-green-950"
+                  ? "no-underline text-green-700"
                   : "text-green-950 underline underline-offset-4"
               }
             >
@@ -38,7 +38,7 @@ export default function Header() {
               to="/sign-in"
               className={({ isActive }) =>
                 isActive
-                  ? "no-underline text-green-950"
+                  ? "no-underline text-green-700"
                   : "text-green-950 underline underline-offset-4"
               }
             >
