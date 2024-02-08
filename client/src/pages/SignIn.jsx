@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../redux/user/userSlice";
 
 export default function SignIn() {
   const [loading, setLoading] = useState(false);
@@ -11,6 +13,7 @@ export default function SignIn() {
   const [loginWithEmail, setLoginWithEmail] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     handleSubmit,
@@ -27,6 +30,8 @@ export default function SignIn() {
         data
       );
       setLoading(false);
+
+      dispatch(login(response.data.data.user));
       setSuccess(response.data.success);
       setResponse(response.data.message);
       setTimeout(() => {
